@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Columns</title>
+</head>
+<body>
+<h1>Select Columns for Matching</h1>
+<form action="/process" method="post">
+    <input type="hidden" name="file_a" value="{{ file_a }}">
+    <input type="hidden" name="file_b" value="{{ file_b }}">
+
+    <label for="column_a">Select column from File A:</label>
+    <select name="column_a" id="column_a">
+        {% for column in columns_a %}
+        <option value="{{ column }}">{{ column }}</option>
+        {% endfor %}
+    </select><br><br>
+
+    <label for="column_b">Select column from File B:</label>
+    <select name="column_b" id="column_b">
+        {% for column in columns_b %}
+        <option value="{{ column }}">{{ column }}</option>
+        {% endfor %}
+    </select><br><br>
+
+    <label>Select columns to include from File B:</label><br>
+    {% for column in columns_b %}
+    <input type="checkbox" name="selected_columns" value="{{ column }}">{{ column }}<br>
+    {% endfor %}
+    <br>
+
+    <button type="submit">Process</button>
+</form>
+</body>
+</html>
