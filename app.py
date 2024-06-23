@@ -52,7 +52,7 @@ def process_files():
     merged_df = pd.merge(dfA, dfB[['authorName'] + selected_columns], left_on=column_a, right_on=column_b, how='left')
 
     output_file = os.path.join(app.config['UPLOAD_FOLDER'], 'merged_output.csv')
-    merged_df.to_csv(output_file, index=False，encoding='utf-8-sig')
+    merged_df.to_csv(output_file, index=False, encoding='utf-8-sig')
 
     return send_file(output_file, as_attachment=True, download_name='merged_output.csv')
 
