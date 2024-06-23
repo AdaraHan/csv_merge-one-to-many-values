@@ -1,17 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Upload CSV Files</title>
+    <title>CSV Merge Tool</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h1>Upload CSV Files</h1>
-<form action="/upload" method="post" enctype="multipart/form-data">
-    <label for="fileA">File A:</label>
-    <input type="file" name="fileA" id="fileA" required><br><br>
-    <label for="fileB">File B:</label>
-    <input type="file" name="fileB" id="fileB" required><br><br>
-    <button type="submit">Upload</button>
-</form>
+    <div class="container">
+        <h1>CSV Merge Tool</h1>
+        <p>功能描述：两个CSV文件一值对多值的合并。</p>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="fileA">File A:</label>
+                <input type="file" name="fileA" id="fileA" required>
+            </div>
+            <div class="form-group">
+                <label for="fileB">File B:</label>
+                <input type="file" name="fileB" id="fileB" required>
+            </div>
+            <button type="submit" class="btn">Upload</button>
+        </form>
+    </div>
 </body>
 </html>
